@@ -1,3 +1,4 @@
-# Example_config
+# Rexiel's NvChad Config
 
-This can be used as an example custom config for NvChad. Do check the https://github.com/NvChad/nvcommunity
+A simple Nvchad custom config designed to setup lspconfig with rust_analyzer.
+Should prolly work out of the box after mason installs rust_analyzer.
