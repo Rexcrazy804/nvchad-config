@@ -4,14 +4,25 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 local lspconfig = require "lspconfig"
 
 -- if you just want default config for the servers then put them in a table
-local servers = { "html", "cssls", "tsserver", "clangd", "texlab", "rust_analyzer"}
+local defaulting_servers = { "html", "cssls", "tsserver", "clangd", "texlab"}
 
-for _, lsp in ipairs(servers) do
+for _, lsp in ipairs(defaulting_servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
     capabilities = capabilities,
   }
 end
 
--- 
--- lspconfig.pyright.setup { blabla}
+-- custom server configurations
+lspconfig["rust_analyzer"].setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  settings = {
+    ["rust-analyzer"] = {
+        check = {
+            command = "clippy",
+        },
+    },
+  },
+}
+
