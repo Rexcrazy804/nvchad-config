@@ -102,31 +102,11 @@ local plugins = {
     end
   },
   {
-    "folke/trouble.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    lazy = false,
-    opts = {
-      use_diagnostic_signs = true,
-      auto_close = true,
-    },
-  },
-  {
     "piersolenski/wtf.nvim",
     dependencies = {
       "MunifTanjim/nui.nvim",
     },
-    opts = {
-      openai_api_key = "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"
-    },
     keys = {
-      {
-        "gw",
-        mode = { "n", "x" },
-        function()
-          require("wtf").ai()
-        end,
-        desc = "Debug diagnostic with AI",
-      },
       {
         mode = { "n" },
         "gW",
