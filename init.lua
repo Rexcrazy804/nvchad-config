@@ -43,3 +43,5 @@ vim.api.nvim_create_autocmd('FileType', {
     end,
     desc = 'Disable focus autoresize for FileType',
 })
+
+vim.wo.relativenumber = true

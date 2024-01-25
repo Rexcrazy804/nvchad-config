@@ -3,8 +3,6 @@ local M = {}
 
 M.general = {
   n = {
-    [";"] = { ":", "enter command mode", opts = { nowait = true } },
-
     ["<leader>rr"] = {
       function()
         require("nvterm.terminal").toggle("float")
