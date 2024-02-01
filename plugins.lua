@@ -56,10 +56,7 @@ local plugins = {
   -- override plugin configs
   {
     "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
-      }
-    }
+    opts = overrides.mason,
   },
 
   {
@@ -119,7 +116,6 @@ local plugins = {
   },
   {
     "rcarriga/nvim-notify",
-    lazy = false,
     config = function ()
       require("notify").setup {
         stages = 'fade',
@@ -129,6 +125,12 @@ local plugins = {
       }
       vim.notify = require('notify')
     end
+  },
+  {
+    "nvim-telescope/telescope.nvim",
+    dependencies = {
+      "rcarriga/nvim-notify",
+    }
   },
 }
 
