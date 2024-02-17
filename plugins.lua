@@ -2,9 +2,7 @@ local overrides = require("custom.configs.overrides")
 
 ---@type NvPluginSpec[]
 local plugins = {
-
   -- Override plugin definition options
-
   {
     "neovim/nvim-lspconfig",
     config = function()
