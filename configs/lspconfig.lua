@@ -19,6 +19,17 @@ lspconfig["rust_analyzer"].setup {
   capabilities = capabilities,
   settings = {
     ["rust-analyzer"] = {
+      imports = {
+        granularity = {
+          group = "module",
+        },
+        prefix = "self",
+      },
+      cargo = {
+        buildScripts = {
+          enable = true,
+        },
+      },
       check = {
         command = "clippy",
       },
@@ -31,6 +42,25 @@ lspconfig["rust_analyzer"].setup {
           },
         },
       },
+    },
+  },
+}
+
+lspconfig.tailwindcss.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = {
+    "rust",
+    -- html
+    'html',
+    'css',
+    -- js
+    'javascript',
+    'typescript',
+  },
+  init_options = {
+    userLanguages = {
+      rust = "html",
     },
   },
 }
