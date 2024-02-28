@@ -3,6 +3,20 @@ local overrides = require("custom.configs.overrides")
 ---@type NvPluginSpec[]
 local plugins = {
   {
+    'nanotee/zoxide.vim',
+    cmd = {
+      "Z",
+      "Zi"
+    },
+    dependencies = {
+      "junegunn/fzf"
+    }
+  },
+  {
+    "junegunn/fzf",
+    build = "~/.fzf/install --all",
+  },
+  {
     "NvChad/nvim-colorizer.lua",
     opts = {
       filetypes = { "*" },
