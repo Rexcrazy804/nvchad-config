@@ -58,7 +58,6 @@ local plugins = {
     "NvChad/nvterm",
     opts = {
       terminals = {
-        shell = "nu.exe",
         type_opts = {
           float = {
             relative = 'editor',
