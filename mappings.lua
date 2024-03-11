@@ -12,6 +12,15 @@ M.general = {
      "Run rust project"
     },
 
+    ["<leader>lm"] = {
+      function()
+        require("nvterm.terminal").toggle("float")
+        require("nvterm.terminal").send("latexmk -shell-escape main.tex --pdf", "float")
+        vim.cmd "startinsert"
+      end,
+      "Compile Latex File"
+    },
+
      -- the 2nd argument i.e direction is optional
     ["<leader>fe"] = {":!explorer .<cr>", "Open folder in explorer"},
   },

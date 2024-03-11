@@ -62,6 +62,8 @@ lspconfig.tailwindcss.setup {
     -- js
     'javascript',
     'typescript',
+    -- php
+    'php',
   },
   init_options = {
     userLanguages = {

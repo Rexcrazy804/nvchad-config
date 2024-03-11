@@ -3,6 +3,12 @@ local overrides = require("custom.configs.overrides")
 ---@type NvPluginSpec[]
 local plugins = {
   {
+    'eandrju/cellular-automaton.nvim',
+    cmd = {
+      "CellularAutomaton"
+    },
+  },
+  {
     'nanotee/zoxide.vim',
     cmd = {
       "Z",
@@ -14,7 +20,7 @@ local plugins = {
   },
   {
     "junegunn/fzf",
-    build = "~/.fzf/install --all",
+    build = "$HOME/.fzf/install --all",
   },
   {
     "NvChad/nvim-colorizer.lua",
