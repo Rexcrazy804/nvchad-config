@@ -4,7 +4,18 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 local lspconfig = require "lspconfig"
 
 -- if you just want default config for the servers then put them in a table
-local defaulting_servers = { "html", "cssls", "tsserver", "clangd", "texlab", "zls", "pyright", "nushell"}
+local defaulting_servers = {
+  "html",
+  "cssls",
+  "tsserver",
+  "clangd",
+  "texlab",
+  "zls",
+  "pyright",
+  "nushell",
+  "intelephense",
+  "rnix",
+}
 
 for _, lsp in ipairs(defaulting_servers) do
   lspconfig[lsp].setup {
@@ -19,9 +30,9 @@ lspconfig["rust_analyzer"].setup {
   capabilities = capabilities,
   settings = {
     ["rust-analyzer"] = {
-      rustfmt = {
-        overrideCommand = { "leptosfmt", "--stdin", "--rustfmt" },
-      },
+      -- rustfmt = {
+      --   overrideCommand = { "leptosfmt", "--stdin", "--rustfmt" },
+      -- },
       imports = {
         granularity = {
           group = "module",
